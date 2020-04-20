@@ -1,0 +1,4 @@
+LEARNING MOD CHANGELOG
+
+v1.0:	Initialized files, mod compiles and loads successfully.
+ 		Changed the metadata to correctly describe the mod.

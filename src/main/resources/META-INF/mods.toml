@@ -1,0 +1,12 @@
+modLoader="javafml"
+loaderVersion="[31,)"
+[[mods]]
+modId="learning"
+version="${file.jarVersion}"
+displayName="Learning Mod"
+displayURL="https://github.com/pashmir"
+credits="To my friends <3"
+authors="Pashmir"
+description='''
+This mod is made for the author to get familiar with forge API
+'''
