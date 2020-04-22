@@ -1,4 +1,4 @@
-#Learning forge mod creation
+# Learning forge mod creation
 ## The following mod must contain
 - A modded block
 - A modded item (not the block item)
@@ -18,3 +18,5 @@ There has to be a pack.mcmeta that tells the game about the mod's resources. It 
 Running the client from eclipse shows the debug console.
 
 The example mod has some methods which show you how to communicate between mods and how to log or do things in events while the game loads.
+
+I learned how to use the deferred register in the registries class.

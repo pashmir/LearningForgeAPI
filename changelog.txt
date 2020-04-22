@@ -1,4 +1,5 @@
 LEARNING MOD CHANGELOG
 
+v1.1:	Added a custom block and its item. It currently has no other features.
 v1.0:	Initialized files, mod compiles and loads successfully.
  		Changed the metadata to correctly describe the mod.

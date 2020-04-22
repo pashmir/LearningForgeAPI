@@ -1,0 +1,9 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "": [{
+      "model":"learning:block/myblock"
+    }]
+  }
+  }
+}
