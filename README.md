@@ -20,3 +20,5 @@ Running the client from eclipse shows the debug console.
 The example mod has some methods which show you how to communicate between mods and how to log or do things in events while the game loads.
 
 I learned how to use the deferred register in the registries class.
+
+I learned how to make tile entities in deferred registers. The tile entity type is created at runtime, so the tile entity constructor can call it even though there is no explicit declaration in the code.
