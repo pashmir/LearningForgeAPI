@@ -14,6 +14,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import pashmir.learning.Learning;
 import pashmir.learning.blocks.MyBlock;
+import pashmir.learning.items.MyItem;
 import pashmir.learning.tiles.MyTile;
 
 public class Registries {
@@ -25,7 +26,7 @@ public class Registries {
 	//creation of deferred register for items
 	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Learning.MODID);
 	//adding custom items from the items package
-	
+	public static final RegistryObject<Item> MYITEM = ITEMS.register(MyItem.NAME , () -> new MyItem() );
 	//creation of deferred register for tile entities
 	public static final DeferredRegister<TileEntityType<?>> TILES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, Learning.MODID);
 	//adding custom TEs from the tile entities package
@@ -33,6 +34,7 @@ public class Registries {
 	
 	static {
 		//my block item are not in items package since they depend on the blocks class
+		//if more blocks were added, it would be convenient to register the items using a stream
 		ITEMS.register(MyBlock.NAME, () -> new BlockItem( MYBLOCK.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS).maxStackSize(16) ));
 	}
 	

@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "xax",
+        "x x",
+        "   "
+    ],
+    "key":
+    {
+        "x":
+        {
+            "item": "minecraft:diamond"
+        },
+        "a":
+        {
+            "item": "minecraft:nether_star"
+        }
+    },
+    "result":
+    {
+        "item": "learning:myitem",
+        "count": 1
+    }
+}

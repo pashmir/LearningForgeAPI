@@ -1,8 +1,11 @@
 package pashmir.learning.tiles;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -33,11 +36,15 @@ public class MyTile extends TileEntity implements ITickableTileEntity {
 
 	         int j = (20) * 20; //potion duration: 20 seconds
 	         
+        	 Set<Item> itemSet = new HashSet<>();
+        	 itemSet.add(Registries.MYITEM.get());
+	         
 	         AxisAlignedBB axisalignedbb = (new AxisAlignedBB(this.pos)).grow(d0).expand(0.0D, (double)this.world.getHeight(), 0.0D);
 	         List<PlayerEntity> list = this.world.getEntitiesWithinAABB(PlayerEntity.class, axisalignedbb);
 
 	         for(PlayerEntity playerentity : list) {
-	            playerentity.addPotionEffect(new EffectInstance(this.Effect, j, i, true, true));
+	        	 if (playerentity.inventory.hasAny(itemSet))
+	        		 playerentity.addPotionEffect(new EffectInstance(this.Effect, j, i, true, true));
 
 	         }
 	      }

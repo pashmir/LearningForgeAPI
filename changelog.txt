@@ -1,5 +1,6 @@
 LEARNING MOD CHANGELOG
 
+v1.4:	Added a custom armor item. Having it in inventory activates tile entity effect
 v1.3:	Added a custom recipe for the custom block.
 v1.2:	Added a custom tile entity to custom block. The block now gives the speed buff in a 64 block radius
 v1.1:	Added a custom block and its item. It currently has no other features.

@@ -1,11 +1,11 @@
 # Learning forge mod creation
 ## The following mod must contain
-- A modded block * Done *
-- A modded item (not the block item)
-- A modded tile entity * Done *
+- A modded block **Done**
+- A modded item (not the block item) **Done**
+- A modded tile entity **Done**
 - A modded entity
-- A custom recipe * Done *
-- A cosmetic piece of armor
+- A custom recipe **Done**
+- A cosmetic piece of armor **Done. It's not cosmetic but it doesn't matter**
 - Each of which is desired to have a custom feature
 
 ## What I learned
@@ -24,3 +24,5 @@ I learned how to use the deferred register in the registries class.
 I learned how to make tile entities in deferred registers. The tile entity type is created at runtime, so the tile entity constructor can call it even though there is no explicit declaration in the code.
 
 I learned a lot about data packs. Forge treats the data folder as the data folder of a datapack. After I read the docs it was not so clear where I should save this data folder. I found out it must go in the resources folder.
+
+I learned that minecraft classes might not implement all the methods I need for making custom content, and I need to check the interfaces forge add for more functionality.
