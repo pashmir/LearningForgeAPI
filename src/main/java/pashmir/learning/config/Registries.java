@@ -4,6 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -14,6 +16,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import pashmir.learning.Learning;
 import pashmir.learning.blocks.MyBlock;
+import pashmir.learning.entities.MyEntity;
 import pashmir.learning.items.MyItem;
 import pashmir.learning.tiles.MyTile;
 
@@ -30,7 +33,11 @@ public class Registries {
 	//creation of deferred register for tile entities
 	public static final DeferredRegister<TileEntityType<?>> TILES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, Learning.MODID);
 	//adding custom TEs from the tile entities package
-	public static final RegistryObject<TileEntityType<?>> MYTILE = TILES.register(MyTile.NAME,() -> TileEntityType.Builder.create( () -> new MyTile(), MYBLOCK.get()).build(null) );
+	public static final RegistryObject<TileEntityType<?>> MYTILE = TILES.register(MyTile.NAME,() -> TileEntityType.Builder.create( MyTile::new, MYBLOCK.get()).build(null) );
+	//creation of deferred register for entities
+	public static final DeferredRegister<EntityType<?>> ENTITIES = new DeferredRegister<>(ForgeRegistries.ENTITIES, Learning.MODID);
+	//adding custom entity from entities package
+	public static final RegistryObject<EntityType<MyEntity>> MYENTITY = ENTITIES.register(MyEntity.NAME, () -> EntityType.Builder.create( MyEntity::new , EntityClassification.MISC).build(null));
 	
 	static {
 		//my block item are not in items package since they depend on the blocks class
@@ -48,5 +55,7 @@ public class Registries {
 		LOGGER.info("Adding items to registry");
 		TILES.register(FMLJavaModLoadingContext.get().getModEventBus());
 		LOGGER.info("Adding tile entities to registry");
+		ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+		LOGGER.info("Adding entities to registry");
 	}
 }
